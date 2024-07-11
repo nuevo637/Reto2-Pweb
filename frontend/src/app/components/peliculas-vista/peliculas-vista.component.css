@@ -33,29 +33,34 @@ button:hover {
 
 .contenedor {
     display: flex;
-    align-self: center;
-    justify-content: center;
-    width: 950px;
-    min-height: 360px;
-    min-width: 700px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    padding: 20px;
+    max-height: 550px; /* Establece una altura máxima */
+    overflow-y: auto; /* Habilita el scroll vertical */
 }
 
 .pelicula {
-    width: 33%;
+    width: 28%;
+    max-width: 380px;
     min-width: 300px;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: #fff;
-    margin: 10px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-bottom: solid 4px rgb(59, 59, 59);
     border-right: solid 4px rgb(0, 0, 0);
+    margin: 10px;
+    margin-bottom: 20px;
 }
 
+
 .imagenPelicula {
-    height: 375px;
+    height: 385px;
     width: 100%;
     background-color: #080808;
     background-image: none;
@@ -66,6 +71,7 @@ button:hover {
 
 .informacion {
     padding: 15px;
+    min-height: 140px;
 }
 
 .informacion h2{
@@ -77,7 +83,7 @@ button:hover {
 }
 
 .contenedorDescripcion{
- min-height: 90px;    
+ min-height: 100px;    
 }
 
 .ranking {
@@ -102,5 +108,4 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }

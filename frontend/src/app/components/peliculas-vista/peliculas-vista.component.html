@@ -1,7 +1,8 @@
 <div class="direccion">
   <h1>EPIStream</h1>
-  <button [routerLink]="['/eliminarListar']">Ir al Sistema crud</button>
+  <button [routerLink]="['/eliminarListar']">Ir al Sistema CRUD</button>
 </div>
+
 <div class="contenedor">
   <div class="pelicula" *ngFor="let pelicula of peliculas">
     <div class="imagenPelicula" [style.background-image]="'url(' + pelicula.image + ')'"></div>
@@ -12,9 +13,7 @@
           <p>{{ genre }}</p>
         </div>
       </div>
-      <div class="contenedorDescripcion">
-        <p class="descripcion">{{ pelicula.description }}</p>
-      </div>
+      <p class="descripcion">{{ pelicula.description }}</p>
       <p class="ranking">Ranking [{{ pelicula.rating }}/5]: {{ '⭐'.repeat(pelicula.rating) }}</p>
     </div>
   </div>
