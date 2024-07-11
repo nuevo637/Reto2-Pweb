@@ -1,8 +1,41 @@
+.direccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+    color: #000000;
+    font-size: 65px;
+    font-family: "Tiny5";
+    font-weight: bolder;
+}
+
+button{
+    align-self: center;
+    height: 50px;
+    width: 180px;
+    font-size: 18px;
+    background-color:#5a21df;
+    color: #ffffff;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: solid 3px #2a0a74;
+    transition: all 0.3s ;
+}
+
+button:hover {
+    background-color:#5a21df20;
+    color: #000000; 
+}
+
 .contenedor {
     display: flex;
     align-self: center;
     justify-content: center;
-    width: 500px;
+    width: 950px;
     min-height: 360px;
     min-width: 700px;
 }

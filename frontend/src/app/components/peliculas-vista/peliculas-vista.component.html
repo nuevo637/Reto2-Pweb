@@ -1,3 +1,7 @@
+<div class="direccion">
+  <h1>EPIStream</h1>
+  <button [routerLink]="['/eliminarListar']">Ir al Sistema crud</button>
+</div>
 <div class="contenedor">
   <div class="pelicula" *ngFor="let pelicula of peliculas">
     <div class="imagenPelicula" [style.background-image]="'url(' + pelicula.image + ')'"></div>
