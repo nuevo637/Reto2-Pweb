@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,11 +13,21 @@ export class PeliculasVistaComponent implements OnInit {
 
   peliculas: any[] = []; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('assets/movies.json').subscribe(data => {
-      this.peliculas = data.items; 
-    });
+    this.movieService.getMovies().subscribe(
+      (data: any) => {
+        if (Array.isArray(data.items)) {
+          this.peliculas = data.items; // Assuming 'items' contains the array of movies
+        } else {
+          console.error('Invalid data format:', data);
+        }
+      },
+      error => {
+        console.error('Error fetching movies:', error);
+      }
+    );
   }
+
 }
