@@ -1,0 +1,15 @@
+<div class="contenedor">
+    <div class="pelicula" *ngFor="let pelicula of peliculas">
+        <div class="imagenPelicula" [style.background-image]="'url(' + pelicula.image + ')'"></div>
+        <div class="informacion">
+        <h2>{{ pelicula.name }}</h2>
+        <div class="etiquetas">
+            <div class="etiqueta" *ngFor="let genre of pelicula.genres"><p>{{ genre }}</p></div>
+        </div>
+        <div class="contenedorDescripcion">
+            <p class="descripcion">{{ pelicula.description }}</p>
+        </div>
+        <p class="ranking">Ranking [{{ pelicula.rating }}/5]: {{ '⭐'.repeat(pelicula.rating) }}</p>
+        </div>
+    </div>
+</div>

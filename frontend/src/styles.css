@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://media.istockphoto.com/id/1126139612/es/v%C3%ADdeo/puerta-de-la-pel%C3%ADcula-1.jpg?s=640x640&k=20&c=jwJNpvsX_BAXdzmvptrMelKn3vri6zmHbtl9u4Vb44o=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1b1b1b;
+}
