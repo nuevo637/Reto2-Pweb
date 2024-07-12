@@ -8,5 +8,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #334155, #94a3b8);
+    background: linear-gradient(to bottom, #374151, #94a3b8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
 }
