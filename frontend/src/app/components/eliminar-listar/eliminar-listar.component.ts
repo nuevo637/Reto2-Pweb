@@ -30,13 +30,14 @@ export class EliminarListarComponent {
     );
   }
   
-  eliminarPelicula(name: string) {
-    this.movieService.deleteMovie(name).subscribe(
+  eliminarPelicula(movieId: number) {
+    this.movieService.deleteMovie(movieId).subscribe(
       () => {
-        this.peliculas = this.peliculas.filter(pelicula => pelicula.name !== name);
-        console.log('Película eliminada con ID:', name);
+        this.peliculas = this.peliculas.filter(p => p.id !== movieId);
       },
-      error => console.error('Error al eliminar la película', error)
+      error => {
+        console.error('Error deleting movie', error);
+      }
     );
   }
 }
