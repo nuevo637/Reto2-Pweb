@@ -1,1 +1,40 @@
-<p>crear works!</p>
+<div class="content">
+    <form action="" method="POST" class="formulario">
+        <div class="title-content">
+            <h4 class="title">! Bienvenido !</h4>
+            <p class="subtitle">Ingresa la pelicula</p>
+        </div>
+        <label for="name" class="form-label">Nombre:</label>
+        <input type="text" id="name" class="form-input">
+        
+        <label for="description" class="form-label">Descripcion:</label>
+        <textarea name="description" id="description" class="form-textarea"></textarea>
+        
+        <label for="image" class="form-label">Suba la Imagen:</label>
+        <input type="file" id="image" class="form-file">
+        
+        <label for="genres" class="form-label">Generos:</label>
+        <select multiple name="genres" id="genres" class="form-select">
+            <option value="terror">Terror</option>
+            <option value="accion">Accion</option>
+            <option value="comedia">Comedia</option>
+            <option value="drama">Drama</option>
+            <option value="suspenso">Suspenso</option>
+            <option value="romance">Romance</option>
+            <option value="tragedia">Tragedia</option>
+            <option value="animado">Animado</option>
+        </select>
+        
+        <label for="rating" class="form-label">Rating:</label>
+        <input type="text" id="rating" class="form-rating">
+        
+        <label for="in-theaters" class="form-label">En teatros: </label>
+        <select name="in-theaters" id="in-theaters" class="form-select">
+            <option value="True">Si</option>
+            <option value="False">No</option>
+        </select>
+        <div class="content-button">
+            <button> Subir Pelicula </button>
+        </div>
+    </form>
+</div>
