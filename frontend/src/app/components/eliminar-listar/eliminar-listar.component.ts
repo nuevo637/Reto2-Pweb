@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule,RouterModule, RouterOutlet],
   templateUrl: './eliminar-listar.component.html',
-  styleUrl: './eliminar-listar.component.css'
+  styleUrls: ['./eliminar-listar.component.css'],
 })
 export class EliminarListarComponent {
   peliculas: any[] = []; 

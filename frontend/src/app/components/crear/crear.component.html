@@ -32,11 +32,12 @@
         
         <label for="in-theaters" class="form-label">En teatros: </label>
         <select name="in-theaters" id="in-theaters" class="form-select" formControlName="inTeathers">
-            <option value="True">Si</option>
-            <option value="False">No</option>
+            <option style="color: black;" value="True">Si</option>
+            <option style="color: black;" value="False">No</option>
         </select>
         <div class="content-button">
             <button type="submit"> Subir Pelicula </button>
         </div>
     </form>
 </div>
+<button style=" margin-left: 100px; margin-bottom: 10px;" [routerLink]="['/eliminarListar']">Volver Atras</button>
