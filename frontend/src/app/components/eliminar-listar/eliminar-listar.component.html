@@ -1,2 +1,22 @@
-<p>eliminar-listar works!</p>
-<button [routerLink]="['/home']">Ver la cartelera de peliculas</button>
+<div>
+    <button [routerLink]="['/crear']">Agregar una película</button>
+</div>
+<div>
+    <h1>Lista de películas</h1>
+    <div class="pelicula" *ngFor="let pelicula of peliculas">
+        <div class="informacion">
+            <h2>{{ pelicula.name }}</h2>
+            <div class="etiquetas">
+                <div class="etiqueta" *ngFor="let genre of pelicula.genres">
+                    <p>{{ genre }}</p>
+                </div>
+            </div>
+            <p class="descripcion">{{ pelicula.description }}</p>
+        </div>
+        <div class="botones">
+            <button [routerLink]="['/modificar']">Modificar</button>
+            <button (click)="eliminarPelicula(pelicula.name)">Eliminar</button>
+        </div>
+    </div>
+</div>
+<button [routerLink]="['/home']">Ver la cartelera de películas</button>
