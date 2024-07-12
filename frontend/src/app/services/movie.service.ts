@@ -15,6 +15,9 @@ export class MovieService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.baseUrl); // Devuelve un Observable del tipo Movie[]
   }
+  deleteMovie(name: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}${name}/`); // Ajusta la URL según tu API
+  }
 
   addMovie(movie: Movie): Observable<any>{
     const url = `${this.baseUrl}add/`;
