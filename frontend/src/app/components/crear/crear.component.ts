@@ -32,7 +32,7 @@ export class CrearComponent {
         (response) => {
           console.log('Película agregada correctamente:', response);
           this.movieForm.reset();
-          this.router.navigate(['./eliminar-listar']); 
+          this.router.navigate(['/eliminarListar']); 
         },
         (error) => {
           console.error('Error al agregar la película:', error);
