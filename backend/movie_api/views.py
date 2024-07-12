@@ -17,13 +17,24 @@ def datosDePeliculas(request):
 def addMovie(request):
     if request.method == 'POST':
         try:
+            # Cargar los datos de la nueva película desde la solicitud
             nueva_pelicula = json.loads(request.body.decode('utf-8'))
-            # Procesar y actualizar el archivo JSON estático
-            with open('../static/nuevo.json', 'r+') as archivo:
+            
+            # Ruta al archivo JSON
+            ruta_archivo = os.path.join(os.path.dirname(__file__), '..', 'static', 'movies.json')
+            
+            # Leer el archivo JSON
+            with open(ruta_archivo, 'r+') as archivo:
                 peliculas = json.load(archivo)
-                peliculas.append(nueva_pelicula)
+                
+                # Agregar la nueva película al JSON
+                peliculas['items'].append(nueva_pelicula)
+                
+                # Escribir los cambios en el archivo JSON
                 archivo.seek(0)
-                json.dump(peliculas, archivo, indent=4)           
+                json.dump(peliculas, archivo, indent=4)
+                archivo.truncate()
+            
             return JsonResponse({'mensaje': 'Película agregada correctamente'})
         except json.JSONDecodeError as e:
             return JsonResponse({'error': 'Error al decodificar JSON'}, status=400)
