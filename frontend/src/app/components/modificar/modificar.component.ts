@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
