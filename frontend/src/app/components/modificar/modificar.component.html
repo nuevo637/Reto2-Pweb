@@ -1,1 +1,23 @@
-<p>modificar works!</p>
+<div *ngIf="pelicula" class="form-container">
+    <h2>{{ pelicula.name }}</h2>
+    <label>
+      Nombre:
+      <input [(ngModel)]="pelicula.name" class="form-input" />
+    </label>
+    <label>
+      Descripción:
+      <textarea [(ngModel)]="pelicula.description" class="form-textarea"></textarea>
+    </label>
+    <label>
+      Rating:
+      <input [(ngModel)]="pelicula.rating" type="number" class="form-input" />
+    </label>
+    <label>
+      En cines:
+      <input [(ngModel)]="pelicula.inTheaters" type="checkbox" />
+    </label>
+    <div class="button-row">
+      <button [routerLink]="['/home']" (click)="guardar()" class="form-button">Guardar cambios</button>
+      <button [routerLink]="['/eliminarListar']" class="form-button">Volver</button>
+    </div>
+  </div>

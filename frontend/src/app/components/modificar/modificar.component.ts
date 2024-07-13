@@ -28,7 +28,6 @@ export class ModificarComponent implements OnInit{
 
   guardar(): void {
     this.movieService.updateMovie(this.peliculaID, this.pelicula).subscribe(() => {
-
     });
   }
 }
