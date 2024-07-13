@@ -14,6 +14,13 @@ def datosDePeliculas(request):
 
     return JsonResponse(data)
 
+def peliculaPorID(request, movie_id):
+    json_file_path = os.path.join(os.path.dirname(__file__), '../static/movies.json')
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+    movie = next((item for item in data['items'] if item['id'] == movie_id), None)
+    return JsonResponse(movie)
+
 @csrf_exempt
 def addMovie(request):
     if request.method == 'POST':
@@ -70,3 +77,21 @@ def eliminarPelicula(request, id):
             return HttpResponseNotFound({'status': 'not found'})
     else:
         return JsonResponse({'status': 'method not allowed'}, status=405)
+    
+@csrf_exempt
+def actualizarPelicula(request, movie_id):
+    json_file_path = os.path.join(os.path.dirname(__file__), '../static/movies.json')
+    if request.method == 'POST':
+        movie_data = json.loads(request.body)
+        with open(json_file_path, 'r') as file:
+            data = json.load(file)
+
+        for i, movie in enumerate(data['items']):
+            if movie['id'] == movie_id:
+                data['items'][i] = movie_data
+                break
+
+        with open(json_file_path, 'w') as file:
+            json.dump(data, file, indent=4)
+
+        return HttpResponse(status=204)
