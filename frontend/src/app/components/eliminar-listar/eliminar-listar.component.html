@@ -14,7 +14,7 @@
             <p class="descripcion">{{ pelicula.description }}</p>
         </div>
         <div class="botones">
-            <button [routerLink]="['/modificar']">Modificar</button>
+            <button (click)="navegarModificacion(pelicula.id)">Modificar</button>
             <button (click)="eliminarPelicula(pelicula.id)">Eliminar</button>
         </div>
     </div>

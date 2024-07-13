@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class EliminarListarComponent {
   peliculas: any[] = []; 
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe(
@@ -39,5 +39,9 @@ export class EliminarListarComponent {
         console.error('Error deleting movie', error);
       }
     );
+  }
+
+  navegarModificacion(movieId: number): void {
+    this.router.navigate(['/modificar', movieId]);
   }
 }
