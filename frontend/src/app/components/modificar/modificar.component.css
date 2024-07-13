@@ -1,0 +1,76 @@
+/* src/app/components/modificar/modificar.component.css */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 18px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-input:hover,
+  .form-textarea:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  .form-textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .form-container input[type="checkbox"] {
+    margin-left: 10px;
+    transform: scale(1.5);
+  }
+  
+  .button-row {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-button {
+    width: 48%;
+    padding: 12px;
+    background-color:#5a21df;
+    color: white;
+    border-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: white;
+    color: black
+  }
+  
